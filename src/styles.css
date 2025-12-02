@@ -3,8 +3,7 @@
 @import "tailwindcss";
 
 @theme {
-    --color-light-accent : #EF6D58;
-    --color-dark-accent : #EF6D58;
+    --color-orange : #EF6D58;
 
     --color-dark : #391400;
     --color-light: #FFFFFF;
