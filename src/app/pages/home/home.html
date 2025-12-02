@@ -1,4 +1,35 @@
-<main class="container mx-auto px-4 py-8">
-  <h1 class="text-4xl font-bold mb-4">Bienvenue sur ma page d'accueil</h1>
-  <p class="text-gray-600">Ceci est la page home qui utilise le composant header.</p>
+<main class="md:py-12 bg-blue-bg">
+
+  <section id="section1" class="px-[6%] py-8 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
+    <div class="w-full md:w-[45%]">
+      <p class="text-[20px] md:text-[24px] text-orange">SARAH OTMANE</p>
+      <h1 class="text-[30px] md:text-[90px] font-extrabold text-white">Full Stack Developer</h1>
+      <p class="text-[16px] md:text-[20px] text-light-gray">Based in France, I am looking for a permanent contract. <br> Transforming concepts into seamless user experiences is my job.</p>
+      <button class="cursor-pointer px-4 py-3 bg-orange rounded-md mt-5">See my work</button>
+    </div>
+    <figure class="w-full md:w-[45%]">
+      <img src="assets/sarah.svg" alt="Sarah Otmane" class="w-full h-auto">
+    </figure>
+  </section>
+
+  <section class="px-[6%] py-20 bg-beige-bg flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0 text-light font-bold text-[22px] md:text-[32px]">
+    <div class="w-full md:w-[54%] relative">
+      <img src="assets/back1.svg" alt="Sarah Otmane" class="w-full h-auto">
+      <h3 class="absolute left-[5%] bottom-[5%] text-[26px] md:text-[36px] w-[60%]">I prioritize client collaboration, fostering open communication </h3>
+    </div>
+    <div class="w-full md:w-[44%]">
+      <div class="relative">
+        <img src="assets/back2.svg" alt="Sarah Otmane" class="w-full h-auto">
+        <h3 class="absolute top-[8%] left-[5%] w-[60%]">I’m very flexible with time zone communications</h3>
+      </div>
+      <div class="relative">
+        <img src="assets/back3.svg" alt="Sarah Otmane" class="w-full h-auto">
+        <article class="absolute left-[5%] top-[40%]">
+          <p class="text-light-gray text-[10px] md:text-[14px]">I constantly try to improve</p>
+          <h3 class="">My tech stack</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+  <app-section-projet></app-section-projet>
 </main>
