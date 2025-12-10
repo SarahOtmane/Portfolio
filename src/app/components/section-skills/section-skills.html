@@ -1,63 +1,19 @@
 <section class="px-[6%] py-8 md:py-20 bg-blue-bg flex flex-wrap justify-between text-light" id="skills">
     <h2 class="text-[28px] md:text-[48px] text-center font-bold w-full">My <span class="text-orange">skills</span></h2>
 
-    <article class="w-full md:w-[40%]">
-        <p class="text-[20px] md:text-[30px] text-center mt-4 font-bold">Frontend</p>
-        <div class="flex flex-wrap mt-3">
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">ReactJs</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">TypeScript</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Angular</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mt-2">Tailwind</p>
-        </div>
-    </article>
-    <article class="w-full md:w-[40%] mt-3 md:mt-0">
-        <p class="text-[20px] md:text-[30px] text-center mt-4 font-bold">Backend</p>
-        <div class="flex flex-wrap mt-3">
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">NodeJs</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">NestJs</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Express</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Python</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Django</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Flask</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Java</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mt-2">Spring Boot</p>
-        </div>
-    </article>
-    <article class="w-full md:w-[40%] mt-3">
-        <p class="text-[20px] md:text-[30px] text-center mt-4 font-bold">DevOps</p>
-        <div class="flex flex-wrap mt-3">
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Docker</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Kubernetes</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">AWS</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Azure</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Git</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mt-2">CI/CD</p>
-        </div>
-    </article>
-    <article class="w-full md:w-[40%] mt-3">
-        <p class="text-[20px] md:text-[30px] text-center mt-4 font-bold">Databases</p>
-        <div class="flex flex-wrap mt-3">
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">MySQL</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">PostgreSQL</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">MongoDB</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Redis</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mt-2">Firebase</p>
-        </div>
-    </article>
-    <article class="w-full md:w-[40%] mt-3">
-        <p class="text-[20px] md:text-[30px] text-center mt-4 font-bold">Supervision</p>
-        <div class="flex flex-wrap mt-3">
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Prometheus</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Grafana</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mt-2">ELK Stack</p>
-        </div>
-    </article>
-    <article class="w-full md:w-[40%] mt-3">
-        <p class="text-[20px] md:text-[30px] text-center mt-4 font-bold">Gestion projet</p>
-        <div class="flex flex-wrap mt-3">
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Jira</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">Confluence</p>
-            <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mt-2">Asana</p>
-        </div>
-    </article>
+    @for (category of skillsCategories; track category.title; let i = $index) {
+      <article 
+        class="w-full md:w-[40%]"
+        [class.mt-3]="i > 1"
+        [class.md:mt-0]="i === 1">
+          <p class="text-[20px] md:text-[30px] text-center mt-4 font-bold">{{ category.title }}</p>
+          <div class="flex flex-wrap mt-3">
+              @for (skill of category.skills; track skill) {
+                <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">
+                  {{ skill }}
+                </p>
+              }
+          </div>
+      </article>
+    }
 </section>
