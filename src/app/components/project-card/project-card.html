@@ -1,0 +1,67 @@
+<article class="border-2 flex flex-col border-blue-bg p-4 rounded-xl">
+  <img [src]="project.image" [alt]="project.title" class="w-full h-auto mb-4">
+  <h2 class="text-[18px] md:text-[28px] font-bold">{{ project.title }}</h2>
+  <p>{{ project.description }}</p>
+  
+  <!-- Liens -->
+  <a *ngIf="project.siteLink" 
+     [href]="project.siteLink" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="cursor-pointer mt-4">
+    Link to site : 
+    <span class="text-orange px-3 py-2 rounded-2xl hover:bg-beige-dark-bg">
+      {{ project.title }}
+    </span>
+  </a>
+  
+  <a *ngIf="project.frontRepo" 
+     [href]="project.frontRepo" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="cursor-pointer mt-4">
+    Link to Front repository : 
+    <span class="text-orange px-3 py-2 rounded-2xl hover:bg-beige-dark-bg">
+      {{ project.title }} - Front
+    </span>
+  </a>
+  
+  <a *ngIf="project.backRepo" 
+     [href]="project.backRepo" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="cursor-pointer mt-4">
+    Link to Back repository : 
+    <span class="text-orange px-3 py-2 rounded-2xl hover:bg-beige-dark-bg">
+      {{ project.title }} - Back
+    </span>
+  </a>
+  
+  <a *ngIf="project.mobileRepo" 
+     [href]="project.mobileRepo" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="cursor-pointer mt-4">
+    Link to mobile repository : 
+    <span class="text-orange px-3 py-2 rounded-2xl hover:bg-beige-dark-bg">
+      {{ project.title }} - Mobile
+    </span>
+  </a>
+  
+  <!-- Icônes tech -->
+  <div class="flex justify-between items-center mt-auto">
+    <figure class="flex mt-6">
+      <svg *ngFor="let icon of project.techIcons; let i = index" 
+           [class.-ml-2]="i > 0"
+           width="51" 
+           height="51" 
+           viewBox="0 0 51 51">
+        <use [attr.xlink:href]="'#' + icon"></use>
+      </svg>
+    </figure>
+  </div>
+  
+  <button class="px-6 py-3 border w-max rounded-xl mt-5 cursor-pointer hover:bg-blue-bg hover:text-light">
+    See details
+  </button>
+</article>
