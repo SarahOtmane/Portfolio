@@ -36,6 +36,23 @@ export class SectionProjet {
       frontRepo: 'https://github.com/SarahOtmane/BetaGouv_front',
       backRepo: 'https://github.com/SarahOtmane/BetaGouv_back',
       techIcons: ['icon-react', 'icon-nestjs']
+    },
+    {
+      title: 'E-commerce App',
+      description: 'ShopFlutter is an e-commerce MVP developed in 5 days by a pair of people. It allows users to browse products, add them to their cart, and proceed to checkout.',
+      image: 'assets/shopFlutter.png',
+      siteLink: 'https://shopflutter.web.app/',
+      frontRepo: 'https://github.com/SarahOtmane/e_commerce_flutter',
+      techIcons: ['icon-react', 'icon-nestjs']
+    },
+    {
+      title: 'Renowear platform',
+      description: 'RenoWear is a web and mobile application that facilitates the buying, reselling, and customization of clothing within a circular economy framework. It allows users to give their clothes a second life through a system of resale, swapping, and customization, all while integrating a modern and intuitive user experience.',
+      image: 'assets/renowear.png',
+      frontRepo: 'https://github.com/SarahOtmane/MDS',
+      backRepo: 'https://github.com/SarahOtmane/backMDS',
+      mobileRepo: 'https://github.com/SarahOtmane/mobileMDS',
+      techIcons: ['icon-react', 'icon-nestjs']
     }
   ];
 }
