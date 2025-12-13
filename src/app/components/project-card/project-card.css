@@ -5,7 +5,7 @@
 
 @media (min-width: 768px) {
   :host {
-    width: calc(33.333% - 2rem);
+    width: calc(31% - 2rem);
     margin-right: 2rem;
   }
   
