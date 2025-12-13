@@ -17,8 +17,6 @@ export class SectionProjet {
       description: 'Hive2work is the first 100% work-study platform that matches digital talents with the right company assignments by valuing skills.',
       image: 'assets/hive2work.png',
       siteLink: 'https://www.hive2work.fr/',
-      frontRepo: 'https://github.com/SarahOtmane/H2W_web',
-      backRepo: 'https://github.com/SarahOtmane/H2W_api',
       techIcons: ['icon-react', 'icon-tailwind', 'icon-typescript', 'icon-nestjs', 'icon-angular']
     },
     {
