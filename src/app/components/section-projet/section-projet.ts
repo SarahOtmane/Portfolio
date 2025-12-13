@@ -11,6 +11,18 @@ import { ProjectCard, Project } from '../project-card/project-card';
 export class SectionProjet {
   projects: Project[] = [
     {
+      title: 'PECA platform',
+      description: '',
+      image: 'assets/peca.svg',
+      techIcons: ['icon-react', 'icon-tailwind', 'icon-typescript', 'icon-nestjs', 'icon-docker']
+    },
+    {
+      title: 'JADD platform',
+      description: '',
+      image: 'assets/jdd.svg',
+      techIcons: ['icon-react', 'icon-tailwind', 'icon-typescript', 'icon-nestjs', 'icon-docker']
+    },
+    {
       title: 'Hive2work platform',
       description: 'Hive2work is the first 100% work-study platform that matches digital talents with the right company assignments by valuing skills.',
       image: 'assets/hive2work.png',
