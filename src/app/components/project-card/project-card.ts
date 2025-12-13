@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Icons } from '../icons/icons';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 export interface Project {
   title: string;
@@ -15,10 +16,16 @@ export interface Project {
 @Component({
   selector: 'app-project-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './project-card.html',
   styleUrls: ['./project-card.css']
 })
 export class ProjectCard {
   @Input() project!: Project;
+
+  constructor(private sanitizer: DomSanitizer) {}
+
+  getIconSvg(iconId: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(Icons.getIcon(iconId));
+  }
 }
