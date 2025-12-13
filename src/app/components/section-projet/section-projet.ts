@@ -14,13 +14,13 @@ export class SectionProjet {
       title: 'PECA platform',
       description: '',
       image: 'assets/peca.svg',
-      techIcons: ['icon-react', 'icon-tailwind', 'icon-typescript', 'icon-nestjs', 'icon-docker']
+      techIcons: ['icon-react', 'icon-tailwind', 'icon-redux', 'icon-jenkins', 'icon-python']
     },
     {
       title: 'JADD platform',
       description: '',
       image: 'assets/jdd.svg',
-      techIcons: ['icon-react', 'icon-tailwind', 'icon-typescript', 'icon-nestjs', 'icon-docker']
+      techIcons: ['icon-react', 'icon-tailwind', 'icon-redux', 'icon-jenkins', 'icon-python', 'icon-mongo']
     },
     {
       title: 'Hive2work platform',
