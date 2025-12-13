@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ProjectCard, Project } from '../project-card/project-card';
-import { TechIcons } from '../../tech-icons.component';
 
 @Component({
   selector: 'app-section-projet',
   standalone: true,
-  imports: [CommonModule, ProjectCard, TechIcons],
+  imports: [ProjectCard],
   templateUrl: './section-projet.html',
   styleUrls: ['./section-projet.css']
 })
@@ -17,7 +15,7 @@ export class SectionProjet {
       description: 'Hive2work is the first 100% work-study platform that matches digital talents with the right company assignments by valuing skills.',
       image: 'assets/hive2work.png',
       siteLink: 'https://www.hive2work.fr/',
-      techIcons: ['icon-react', 'icon-tailwind', 'icon-typescript', 'icon-nestjs', 'icon-angular']
+      techIcons: ['icon-react', 'icon-tailwind', 'icon-typescript', 'icon-nestjs', 'icon-docker']
     },
     {
       title: 'P10 App',
@@ -25,7 +23,7 @@ export class SectionProjet {
       image: 'assets/p10app.png',
       frontRepo: 'https://github.com/SarahOtmane/p10_app_front',
       backRepo: 'https://github.com/SarahOtmane/p10_app',
-      techIcons: ['icon-react', 'icon-nestjs']
+      techIcons: ['icon-react-native', 'icon-expo', 'icon-sequelize', 'icon-postgresql', 'icon-graphql']
     },
     {
       title: 'Stage Connect',
@@ -33,7 +31,7 @@ export class SectionProjet {
       image: 'assets/betaGouv.png',
       frontRepo: 'https://github.com/SarahOtmane/BetaGouv_front',
       backRepo: 'https://github.com/SarahOtmane/BetaGouv_back',
-      techIcons: ['icon-react', 'icon-nestjs']
+      techIcons: ['icon-react', 'icon-tailwind', 'icon-node', 'icon-docker']
     },
     {
       title: 'E-commerce App',
@@ -41,7 +39,7 @@ export class SectionProjet {
       image: 'assets/shopFlutter.png',
       siteLink: 'https://shopflutter.web.app/',
       frontRepo: 'https://github.com/SarahOtmane/e_commerce_flutter',
-      techIcons: ['icon-react', 'icon-nestjs']
+      techIcons: ['icon-flutter', 'icon-firebase']
     },
     {
       title: 'Renowear platform',
@@ -50,7 +48,7 @@ export class SectionProjet {
       frontRepo: 'https://github.com/SarahOtmane/MDS',
       backRepo: 'https://github.com/SarahOtmane/backMDS',
       mobileRepo: 'https://github.com/SarahOtmane/mobileMDS',
-      techIcons: ['icon-react', 'icon-nestjs']
+      techIcons: ['icon-search', 'icon-react', 'icon-expo', 'icon-node', 'icon-docker']
     }
   ];
 }
