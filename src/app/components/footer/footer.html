@@ -7,32 +7,33 @@
     <!-- Menu Navigation -->
     <nav class="flex-1 md:flex md:justify-center">
       <ul class="flex flex-col md:flex-row md:space-x-8 space-y-3 md:space-y-0">
-        <li *ngFor="let item of menuItems">
-          <a 
-            [routerLink]="item.route"
-            routerLinkActive=""
-            [routerLinkActiveOptions]="{exact: true}"
-            class=" hover:text-orange transition-colors duration-200 text-sm md:text-base">
-            {{ item.label }}
-          </a>
-        </li>
+        @for (item of menuItems; track item.label) {
+          <li>
+            <button 
+              (click)="scrollToSection(item.fragment)"
+              class="hover:text-orange transition-colors duration-200 text-sm md:text-base cursor-pointer">
+              {{ item.label }}
+            </button>
+          </li>
+        }
       </ul>
     </nav>
 
     <!-- Social Links -->
     <div class="flex space-x-4">
-      <a 
-        *ngFor="let social of socialLinks"
-        [href]="social.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        [attr.aria-label]="social.name"
-        class="hover:opacity-80 transition-opacity duration-200">
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="24" cy="24" r="24" fill="#EF6D58"/>
-          <path [attr.d]="social.icon" fill="white"/>
-        </svg>
-      </a>
+      @for (social of socialLinks; track social.name) {
+        <a 
+          [href]="social.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="social.name"
+          class="hover:opacity-80 transition-opacity duration-200 cursor-pointer">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="24" fill="#EF6D58"/>
+            <path [attr.d]="social.icon" fill="white"/>
+          </svg>
+        </a>
+      }
     </div>
   </div>
 </footer>
