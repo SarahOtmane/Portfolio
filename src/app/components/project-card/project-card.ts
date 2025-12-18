@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Icons } from '../icons/icons';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
@@ -11,6 +11,9 @@ export interface Project {
   backRepo?: string;
   mobileRepo?: string;
   techIcons: string[];
+  descriptionComplete?: string;
+  media?: string[];
+  technos?: string[];
 }
 
 @Component({
@@ -22,10 +25,15 @@ export interface Project {
 })
 export class ProjectCard {
   @Input() project!: Project;
+  @Output() showDetails = new EventEmitter<Project>();
 
   constructor(private sanitizer: DomSanitizer) {}
 
   getIconSvg(iconId: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(Icons.getIcon(iconId));
+  }
+
+  onShowDetails() {
+    this.showDetails.emit(this.project);
   }
 }
