@@ -7,7 +7,17 @@
   
   <div class="mt-10 flex flex-row flex-wrap justify-center gap-8">
     @for (project of projects; track project.title) {
-      <app-project-card [project]="project"></app-project-card>
+      <app-project-card 
+        [project]="project"
+        (showDetails)="openProjectDetails($event)">
+      </app-project-card>
     }
   </div>
+
+  <!-- Modal -->
+  <app-project-modal 
+    [project]="selectedProject"
+    [isOpen]="isModalOpen"
+    (close)="closeModal()">
+  </app-project-modal>
 </section>
