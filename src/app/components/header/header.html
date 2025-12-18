@@ -15,20 +15,22 @@
 
       <!-- Menu Desktop -->
       <ul class="hidden md:flex space-x-20">
-        <li *ngFor="let item of menuItems">
-          <a 
-            [routerLink]="item.route" 
-            routerLinkActive="text-orange font-semibold"
-            [routerLinkActiveOptions]="{exact: true}"
-            class="text-light hover:text-orange transition-colors duration-200">
-            {{ item.label }}
-          </a>
-        </li>
+        @for (item of menuItems; track item.label) {
+          <li>
+            <button 
+              (click)="scrollToSection(item.fragment)"
+              class="text-light hover:text-orange transition-colors duration-200 cursor-pointer">
+              {{ item.label }}
+            </button>
+          </li>
+        }
       </ul>
 
       <!-- CTA Button Desktop -->
       <div class="hidden md:block">
-        <button class="cursor-pointer px-6 py-2 uppercase border border-light rounded-xl hover:bg-orange transition-colors duration-200">
+        <button 
+          (click)="scrollToSection('contact')"
+          class="cursor-pointer px-6 py-2 uppercase border border-light rounded-xl hover:bg-orange transition-colors duration-200">
           Contact
         </button>
       </div>
@@ -38,43 +40,46 @@
         (click)="toggleMenu()"
         class="md:hidden focus:outline-none">
         <svg class="w-8 h-8 text-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path 
-            *ngIf="!isMenuOpen"
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-            stroke-width="2" 
-            d="M4 6h16M4 12h16M4 18h16">
-          </path>
-          <path 
-            *ngIf="isMenuOpen"
-            stroke-linecap="round" 
-            stroke-linejoin="round" 
-            stroke-width="2" 
-            d="M6 18L18 6M6 6l12 12">
-          </path>
+          @if (!isMenuOpen) {
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M4 6h16M4 12h16M4 18h16">
+            </path>
+          }
+          @if (isMenuOpen) {
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2" 
+              d="M6 18L18 6M6 6l12 12">
+            </path>
+          }
         </svg>
       </button>
     </div>
 
     <!-- Menu Mobile -->
-    <div 
-      *ngIf="isMenuOpen"
-      class="md:hidden mt-4 pb-4">
-      <ul class="space-y-4">
-        <li *ngFor="let item of menuItems">
-          <a 
-            [routerLink]="item.route"
-            (click)="toggleMenu()"
-            routerLinkActive="text-orange font-semibold"
-            [routerLinkActiveOptions]="{exact: true}"
-            class="text-light hover:text-orange transition-colors duration-200">
-            {{ item.label }}
-          </a>
-        </li>
-      </ul>
-      <button class="w-full mt-4 cursor-pointer px-6 py-2 uppercase border border-light rounded-xl hover:bg-orange transition-colors duration-200">
-        Contact
-      </button>
-    </div>
+    @if (isMenuOpen) {
+      <div class="md:hidden mt-4 pb-4">
+        <ul class="space-y-4">
+          @for (item of menuItems; track item.label) {
+            <li>
+              <button 
+                (click)="scrollToSection(item.fragment)"
+                class="text-light hover:text-orange transition-colors duration-200 cursor-pointer">
+                {{ item.label }}
+              </button>
+            </li>
+          }
+        </ul>
+        <button 
+          (click)="scrollToSection('contact')"
+          class="w-full mt-4 cursor-pointer px-6 py-2 uppercase border border-light rounded-xl hover:bg-orange transition-colors duration-200">
+          Contact
+        </button>
+      </div>
+    }
   </nav>
 </header>
