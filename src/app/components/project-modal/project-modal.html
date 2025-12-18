@@ -1,0 +1,107 @@
+@if (isOpen && project) {
+  <div 
+    class="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    (click)="onBackdropClick($event)">
+    
+    <div class="bg-beige-bg rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+      <!-- Header -->
+      <div class="sticky top-0 bg-beige-bg border-b-2 border-blue-bg p-6 flex justify-between items-center">
+        <h2 class="text-[24px] md:text-[32px] font-bold text-dark">{{ project.title }}</h2>
+        <button 
+          (click)="onClose()" 
+          class="text-dark hover:text-orange transition-colors text-3xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-beige-dark-bg"
+          aria-label="Close modal">
+          ×
+        </button>
+      </div>
+
+      <!-- Content -->
+      <div class="p-6 md:p-8">
+        <!-- Image -->
+        <img 
+          [src]="project.image" 
+          [alt]="project.title" 
+          class="w-full h-auto rounded-xl mb-6 shadow-lg">
+
+        <!-- Media (6 par ligne) -->
+        @if (project.media && project.media.length > 0) {
+          <div class="grid grid-cols-3 md:grid-cols-6 gap-2 mb-6">
+            @for (mediaItem of project.media; track mediaItem) {
+              <img 
+                [src]="mediaItem" 
+                [alt]="project.title + ' media'" 
+                class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-transform cursor-pointer">
+            }
+          </div>
+        }
+
+        <!-- Description complète -->
+        <div class="mb-6">
+          <h3 class="text-[20px] md:text-[24px] font-bold mb-3 text-dark">Description</h3>
+          <p class="text-[16px] md:text-[18px] text-gray-700 leading-relaxed">
+            {{ project.descriptionComplete || project.description || 'Description à venir...' }}
+          </p>
+        </div>
+
+        <!-- Technologies -->
+        @if (project.technos && project.technos.length > 0) {
+          <div class="mb-6">
+            <h3 class="text-[20px] md:text-[24px] font-bold mb-3 text-dark">Technologies utilisées</h3>
+            <div class="flex flex-wrap gap-2">
+              @for (techno of project.technos; track techno) {
+                <span class="px-4 py-2 bg-blue-bg text-light rounded-lg text-[14px] md:text-[16px] font-medium">
+                  {{ techno }}
+                </span>
+              }
+            </div>
+          </div>
+        }
+
+        <!-- Links -->
+        @if (project.siteLink || project.frontRepo || project.backRepo || project.mobileRepo) {
+          <div class="mb-6">
+            <h3 class="text-[20px] md:text-[24px] font-bold mb-3 text-dark">Liens</h3>
+            <div class="flex flex-wrap gap-3">
+              @if (project.siteLink) {
+                <a 
+                  [href]="project.siteLink" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="px-6 py-3 bg-blue-bg text-light rounded-xl hover:bg-orange transition-colors">
+                  Visiter le site
+                </a>
+              }
+              @if (project.frontRepo) {
+                <a 
+                  [href]="project.frontRepo" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="px-6 py-3 border-2 border-blue-bg text-dark rounded-xl hover:bg-blue-bg hover:text-light transition-colors">
+                  Repository Front
+                </a>
+              }
+              @if (project.backRepo) {
+                <a 
+                  [href]="project.backRepo" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="px-6 py-3 border-2 border-blue-bg text-dark rounded-xl hover:bg-blue-bg hover:text-light transition-colors">
+                  Repository Back
+                </a>
+              }
+              @if (project.mobileRepo) {
+                <a 
+                  [href]="project.mobileRepo" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="px-6 py-3 border-2 border-blue-bg text-dark rounded-xl hover:bg-blue-bg hover:text-light transition-colors">
+                  Repository Mobile
+                </a>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}

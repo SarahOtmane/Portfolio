@@ -1,0 +1,26 @@
+:host {
+  display: contents;
+}
+
+/* Smooth scroll for modal content */
+.overflow-y-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #FF6B35 #F5F5DC;
+}
+
+.overflow-y-auto::-webkit-scrollbar {
+  width: 8px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: #F5F5DC;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background-color: #FF6B35;
+  border-radius: 4px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background-color: #E55A2B;
+}
