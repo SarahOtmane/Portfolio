@@ -60,7 +60,9 @@
     </figure>
   </div>
   
-  <button class="px-6 py-3 border w-max rounded-xl mt-5 cursor-pointer hover:bg-blue-bg hover:text-light">
+  <button 
+    (click)="onShowDetails()"
+    class="px-6 py-3 border w-max rounded-xl mt-5 cursor-pointer hover:bg-blue-bg hover:text-light transition-colors">
     See details
   </button>
 </article>
