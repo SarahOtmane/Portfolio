@@ -54,11 +54,14 @@ export class SectionContact {
     try {
       // Préparer les paramètres pour EmailJS
       const templateParams = {
-        from_name: this.formData.name,
+        name: this.formData.name,
         from_email: this.formData.email,
-        message: this.formData.message,
-        to_email: 'sarahotmane02@gmail.com'
+        message: this.formData.message
       };
+
+      console.log('Service ID:', this.EMAIL_SERVICE_ID);
+      console.log('Template ID:', this.EMAIL_TEMPLATE_ID);
+      console.log('Paramètres:', templateParams);
 
       // Envoyer l'email via EmailJS
       const response = await emailjs.send(
@@ -78,9 +81,10 @@ export class SectionContact {
         message: ''
       };
       form.resetForm();
-    } catch (error) {
+    } catch (error: any) {
       console.error('Erreur lors de l\'envoi:', error);
-      this.submitError = 'Une erreur est survenue. Veuillez réessayer plus tard.';
+      console.error('Détails de l\'erreur:', error.text || error.message);
+      this.submitError = `Une erreur est survenue: ${error.text || error.message || 'Veuillez réessayer plus tard.'}`;
     } finally {
       this.isSubmitting = false;
     }
