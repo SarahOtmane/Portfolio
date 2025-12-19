@@ -2,7 +2,7 @@
 
 Portfolio personnel présentant mes projets, compétences et expériences en développement full-stack.
 
-🌐 **Live Demo**: [Déployé sur Vercel](https://votre-url-vercel.app)
+🌐 **Live Demo**: [Déployé sur Vercel](https://portfolio-4mgqsaeqn-sarahs-projects-e556a5c1.vercel.app/)
 
 ## 📋 Table des matières
 
@@ -123,10 +123,10 @@ Les variables de build sont configurées automatiquement.
 ## 📧 Contact
 
 **Sarah Otmane**
-- Portfolio: [votre-url-vercel.app](https://votre-url-vercel.app)
+- Portfolio: [portoflio-vercel.app](https://portfolio-4mgqsaeqn-sarahs-projects-e556a5c1.vercel.app/)
 - LinkedIn: [sarah-otmane](https://www.linkedin.com/in/sarah-otmane-b03212251/)
 - GitHub: [@SarahOtmane](https://github.com/SarahOtmane)
-- Email: contact@sarah-otmane.fr
+- Email: sarahotmane02@gmail.com
 
 ## 📝 License
 
