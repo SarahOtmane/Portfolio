@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import emailjs from '@emailjs/browser';
-import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-section-contact',
@@ -20,10 +19,10 @@ export class SectionContact {
   submitMessage = '';
   submitError = '';
 
-  // Clés EmailJS depuis les variables d'environnement
-  private readonly EMAIL_SERVICE_ID = environment.emailjs.serviceId;
-  private readonly EMAIL_TEMPLATE_ID = environment.emailjs.templateId;
-  private readonly EMAIL_PUBLIC_KEY = environment.emailjs.publicKey;
+  // Clés EmailJS - Ces clés publiques peuvent être dans le code
+  private readonly EMAIL_SERVICE_ID = 'service_lntm7p3';
+  private readonly EMAIL_TEMPLATE_ID = 'template_9fkb5zk';
+  private readonly EMAIL_PUBLIC_KEY = '_rDzWPK0Bl8z0bIPW';
 
   async onSubmit(form: any) {
     // Réinitialiser les messages
@@ -59,10 +58,6 @@ export class SectionContact {
         message: this.formData.message
       };
 
-      console.log('Service ID:', this.EMAIL_SERVICE_ID);
-      console.log('Template ID:', this.EMAIL_TEMPLATE_ID);
-      console.log('Paramètres:', templateParams);
-
       // Envoyer l'email via EmailJS
       const response = await emailjs.send(
         this.EMAIL_SERVICE_ID,
@@ -71,7 +66,6 @@ export class SectionContact {
         this.EMAIL_PUBLIC_KEY
       );
 
-      console.log('Email envoyé avec succès!', response);
       this.submitMessage = 'Message envoyé avec succès! Je vous répondrai bientôt.';
       
       // Réinitialiser le formulaire
