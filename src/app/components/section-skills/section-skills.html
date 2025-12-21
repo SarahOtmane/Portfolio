@@ -7,7 +7,7 @@
         [class.mt-3]="i > 1"
         [class.md:mt-0]="i === 1">
           <p class="text-[20px] md:text-[30px] text-center mt-4 font-bold">{{ category.title }}</p>
-          <div class="flex flex-wrap mt-3">
+          <div class="flex flex-wrap mt-3 w-full justify-center md:justify-start">
               @for (skill of category.skills; track skill) {
                 <p class="py-2 w-[110px] text-center bg-beige-bg text-dark rounded-2xl mr-2 mt-2">
                   {{ skill }}
