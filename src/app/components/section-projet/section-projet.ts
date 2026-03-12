@@ -48,8 +48,8 @@ export class SectionProjet {
       descriptionComplete: 'This project is a web platform designed to help educational institutions build and manage an active alumni network. The platform centralizes interactions between schools and graduates by providing a dedicated space where alumni can create professional profiles, share job opportunities, and connect with other members of the community.The system includes role-based access management to ensure secure and controlled interactions between different types of users, such as administrators and alumni. Schools can monitor alumni engagement, organize events, and maintain long-term relationships with graduates.The goal of the platform is to strengthen the connection between institutions and their alumni while creating a dynamic professional network that benefits both current students and graduates.',
       image: 'assets/Allumni.svg',
       backRepo: 'https://github.com/SarahOtmane/Allumni',
-      techIcons: ['icon-react', 'icon-tailwind', 'icon-typescript', 'icon-nestjs', 'icon-docker'],
-      technos: ['react', 'typescript', 'tailwindcss', 'nestjs', 'docker', 'mySQL'],
+      techIcons: ['icon-angular', 'icon-tailwind', 'icon-typescript', 'icon-nestjs', 'icon-docker'],
+      technos: ['angular', 'typescript', 'tailwindcss', 'nestjs', 'docker', 'mySQL'],
       media: ['assets/allumni/allumni_1.png', 'assets/allumni/allumni_2.png']
     },
     {
