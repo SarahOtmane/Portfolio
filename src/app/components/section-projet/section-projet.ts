@@ -43,6 +43,16 @@ export class SectionProjet {
       media: []
     },
     {
+      title: 'Allumni platform',
+      description: 'An all-in-one alumni platform designed to reconnect graduates with their school and professional network. The application allows alumni to create profiles, share opportunities, and interact with the community while enabling schools to manage and engage their alumni network.',
+      descriptionComplete: 'This project is a web platform designed to help educational institutions build and manage an active alumni network. The platform centralizes interactions between schools and graduates by providing a dedicated space where alumni can create professional profiles, share job opportunities, and connect with other members of the community.The system includes role-based access management to ensure secure and controlled interactions between different types of users, such as administrators and alumni. Schools can monitor alumni engagement, organize events, and maintain long-term relationships with graduates.The goal of the platform is to strengthen the connection between institutions and their alumni while creating a dynamic professional network that benefits both current students and graduates.',
+      image: 'assets/Allumni.svg',
+      backRepo: 'https://github.com/SarahOtmane/Allumni',
+      techIcons: ['icon-react', 'icon-tailwind', 'icon-typescript', 'icon-nestjs', 'icon-docker'],
+      technos: ['react', 'typescript', 'tailwindcss', 'nestjs', 'docker', 'mySQL'],
+      media: ['assets/allumni/allumni_1.png', 'assets/allumni/allumni_2.png']
+    },
+    {
       title: 'Le Végétal platform',
       description: 'Website developed for a vegetarian restaurant including a custom-built online reservation system. Created during my apprenticeship at L\'Éléphant Rose.',
       descriptionComplete: 'Le Végétal is a website I developed for a vegetarian restaurant during my apprenticeship at L\'Éléphant Rose. The site showcases the establishment, its concept, and menu, while integrating a custom-built online reservation module that allows customers to easily book their table. The modern and intuitive interface reflects the restaurant\'s identity and provides a smooth user experience across all devices.',
@@ -85,18 +95,18 @@ export class SectionProjet {
       technos: ['flutter', 'firebase'],
       media: []
     },
-    {
-      title: 'Renowear platform',
-      description: 'RenoWear is a web and mobile application that facilitates the buying, reselling, and customization of clothing within a circular economy framework. It allows users to give their clothes a second life through a system of resale, swapping, and customization, all while integrating a modern and intuitive user experience.',
-      descriptionComplete: 'RenoWear is a web and mobile application that facilitates the buying, reselling, and customization of clothing within a circular economy framework. It allows users to give their clothes a second life through a system of resale, swapping, and customization, all while integrating a modern and intuitive user experience. The platform promotes sustainable fashion by encouraging users to recycle and upcycle their garments, reducing waste and environmental impact. Features include user profiles, item listings, secure transactions, and customization options to personalize clothing items.',
-      image: 'assets/renowear.png',
-      frontRepo: 'https://github.com/SarahOtmane/MDS',
-      backRepo: 'https://github.com/SarahOtmane/backMDS',
-      mobileRepo: 'https://github.com/SarahOtmane/mobileMDS',
-      techIcons: ['icon-search', 'icon-react', 'icon-expo', 'icon-node', 'icon-docker'],
-      technos: ['react', 'expo', 'nodeJS', 'docker', 'mongodb'],
-      media: []
-    }
+    // {
+    //   title: 'Renowear platform',
+    //   description: 'RenoWear is a web and mobile application that facilitates the buying, reselling, and customization of clothing within a circular economy framework. It allows users to give their clothes a second life through a system of resale, swapping, and customization, all while integrating a modern and intuitive user experience.',
+    //   descriptionComplete: 'RenoWear is a web and mobile application that facilitates the buying, reselling, and customization of clothing within a circular economy framework. It allows users to give their clothes a second life through a system of resale, swapping, and customization, all while integrating a modern and intuitive user experience. The platform promotes sustainable fashion by encouraging users to recycle and upcycle their garments, reducing waste and environmental impact. Features include user profiles, item listings, secure transactions, and customization options to personalize clothing items.',
+    //   image: 'assets/renowear.png',
+    //   frontRepo: 'https://github.com/SarahOtmane/MDS',
+    //   backRepo: 'https://github.com/SarahOtmane/backMDS',
+    //   mobileRepo: 'https://github.com/SarahOtmane/mobileMDS',
+    //   techIcons: ['icon-search', 'icon-react', 'icon-expo', 'icon-node', 'icon-docker'],
+    //   technos: ['react', 'expo', 'nodeJS', 'docker', 'mongodb'],
+    //   media: []
+    // }
   ];
 
   openProjectDetails(project: Project) {
